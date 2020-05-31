@@ -12,12 +12,12 @@ app.use(express.static("public"));
 
 //get request for api route -- view all notes
 app.get("/api/notes", function(req, res) {
-    res.sendFile(path.join(__dirname, "./db/db.json"));
+    res.sendFile(path.join(__dirname, "./develop/db/db.json"));
 });
 
 //get request for api route -- view note by id
 app.get("/api/notes/:id", function(req, res) {
-    let notes = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+    let notes = JSON.parse(fs.readFileSync("./develop/db/db.json", "utf8"));
     res.json(notes[Number(req.params.id)]);
 });
 
@@ -33,20 +33,20 @@ app.get("*", function(req, res) {
 
 //post request to save notes
 app.post("/api/notes", function(req, res) {
-    let notes = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+    let notes = JSON.parse(fs.readFileSync("./develop/db/db.json", "utf8"));
     let newNote = req.body;
     let uniqueID = notes.length.toString();
     newNote.id = uniqueID;
     notes.push(newNote);
 
-    fs.writeFileSync("./db/db.json", JSON.stringify(notes));
+    fs.writeFileSync("./develop/db/db.json", JSON.stringify(notes));
     console.log("New note saved to database! Content: ", newNote);
     res.json(notes);
 });
 
 //delete request to delete a saved note
 app.delete("/api/notes/:id", function(req, res) {
-    let notes = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+    let notes = JSON.parse(fs.readFileSync("./develop/db/db.json", "utf8"));
     let noteID = req.params.id;
     let newID = 0;
     console.log(`Note deleted!`);
@@ -59,7 +59,7 @@ app.delete("/api/notes/:id", function(req, res) {
         newID++;
     }
 
-    fs.writeFileSync("./db/db.json", JSON.stringify(notes));
+    fs.writeFileSync("./develop/db/db.json", JSON.stringify(notes));
     res.json(notes);
 });
 
