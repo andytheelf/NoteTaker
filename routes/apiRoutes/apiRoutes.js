@@ -18,9 +18,9 @@ router.post('/notes', (req, res) => {
 
 //added delete option to delete notes
 router.delete('/notes/:id', (req, res) => {
-    const id = req.params.id
+    const notesId = req.params.id
     for (var i = 0; i < notes.length; i++) {
-        if (id === notes[i].id) {
+        if (notesId === notes[i].id) {
             notes.splice(i, 1)
         }
     }
