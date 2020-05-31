@@ -11,6 +11,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //get request for api route -- view all notes
+
 app.get("/api/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "./develop/db/db.json"));
 });
@@ -27,7 +28,7 @@ app.get("/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
-app.get("/", function(req, res) {
+app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
