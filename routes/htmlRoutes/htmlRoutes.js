@@ -1,8 +1,8 @@
-// Global Variables addition
+// global variables addition
 var path = require("path")
 const router = require('express').Router()
 
-//HTML routes addition
+//Add in HTML routes 
 
 router.get('/notes', function(req, res) {
     res.sendFile(path.join(__dirname, '../../public/notes.html'))

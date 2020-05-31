@@ -1,4 +1,4 @@
-//Global variables insertions
+//global variables insertions
 const htmlRoutes = require('./routes/htmlRoutes/htmlRoutes')
 const apiRoutes = require('./routes/apiRoutes/apiRoutes')
 const express = require('express')
@@ -12,7 +12,7 @@ app.use(express.static('public'))
 app.use('/api', apiRoutes)
 app.use('/', htmlRoutes)
 
-//Server Listen addition
+//server listen addition
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`);
 });
