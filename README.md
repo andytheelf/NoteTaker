@@ -10,21 +10,6 @@ I WANT to be able to write notes
 SO THAT I can organize my thoughts
 
 # Getting Started
-1. Click the GET STARTED button on the landing page
-2. Create a note title and text within the note
-3. Click the floppy disk icon in the upper-right corner to save the note
-4. All saved notes are displayed in the left column by their note title and in the order in which they were created
-5. Click the trash can icon to delete a saved note
-
-# Link
-# User story
-AS A user
-
-I WANT to be able to write notes
-
-SO THAT I can organize my thoughts
-
-# Getting Started
 1. Click Get Started! 
 2. Create your note title and its text 
 3. Click the floppy disk icon to save! 
