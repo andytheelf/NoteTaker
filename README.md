@@ -2,6 +2,8 @@
 
 # Application to create and save notes! 
 
+![Test Image 1](./public/assets/images/sampleNotes.png)
+
 # User story
 AS A user
 
